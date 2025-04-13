@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-13 10:45+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: posts/models/base.py:8
+msgid "Draft"
+msgstr "پیش نویس"
+
+#: posts/models/base.py:9
+msgid "Hidden"
+msgstr "مخفی"
+
+#: posts/models/base.py:10
+#, fuzzy
+#| msgid "Published?"
+msgid "published"
+msgstr "منتشر شود؟"
+
+#: posts/models/base.py:14 posts/models/category.py:12 posts/models/tag.py:6
+msgid "Title"
+msgstr "عنوان"
+
+#: posts/models/base.py:15 posts/models/category.py:13 posts/models/tag.py:7
+msgid "Slug"
+msgstr "اسلاگ"
+
+#: posts/models/base.py:15
+msgid "Used in the URL of the post."
+msgstr "در آدرس پست استفاده شده است."
+
+#: posts/models/base.py:17
+msgid "Status"
+msgstr "وضعیت"
+
+#: posts/models/base.py:18
+msgid "Publication Date"
+msgstr ""
+
+#: posts/models/base.py:20
+msgid "Start publication"
+msgstr "تاریخ شروع انتشار"
+
+#: posts/models/base.py:21
+msgid "End publication"
+msgstr "تاریخ پایان انتشار"
+
+#: posts/models/base.py:23
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#: posts/models/base.py:24
+msgid "Last Updated"
+msgstr "آخرین بروزرسانی"
+
+#: posts/models/category.py:13
+msgid "Used to build category URL."
+msgstr "برای ساخت URL دسته بندی استفاده می شود."
+
+#: posts/models/category.py:15
+msgid "Parent"
+msgstr "دسته بندی والد"
+
+#: posts/models/category.py:46 posts/models/post.py:12
+msgid "Category"
+msgstr "دسته بندی"
+
+#: posts/models/category.py:47
+msgid "Categories"
+msgstr "دسته بندی ها"
+
+#: posts/models/post.py:9
+msgid "Summary"
+msgstr "خلاصه"
+
+#: posts/models/post.py:10
+msgid "Content"
+msgstr "محتوا"
+
+#: posts/models/post.py:13 posts/models/tag.py:11
+msgid "Tags"
+msgstr "برچسب ها"
+
+#: posts/models/post.py:19
+msgid "Post"
+msgstr "پست"
+
+#: posts/models/post.py:20
+msgid "Posts"
+msgstr "پست ها"
+
+#: posts/models/tag.py:10
+msgid "Tag"
+msgstr "برچسب"
+
+#~ msgid "Published on"
+#~ msgstr "تاریخ انتشار"

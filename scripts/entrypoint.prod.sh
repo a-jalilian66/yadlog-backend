@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 echo "Waiting for postgres to be ready..."
@@ -16,13 +15,13 @@ END
 echo "PostgreSQL is available!"
 
 echo "Running database migrations..."
-python manage.py migrate --noinput
+python src/manage.py migrate --noinput
 
 echo "Collecting static files..."
-python manage.py collectstatic --noinput
+python src/manage.py collectstatic --noinput
 
 echo "Starting Gunicorn..."
-exec gunicorn core.wsgi:application \
+exec gunicorn yadlog.wsgi:application \
     --bind 0.0.0.0:8000 \
     --workers 4 \
     --threads 2 \

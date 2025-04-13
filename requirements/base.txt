@@ -1,3 +1,7 @@
 Django>=5.2,<5.3
 gunicorn
 psycopg2-binary
+django-modeltranslation
+django-mptt
+django-autoslug
+unidecode

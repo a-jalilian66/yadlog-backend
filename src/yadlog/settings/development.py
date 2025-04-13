@@ -1,10 +1,8 @@
 from .common import *
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "").split(",")
-
-CSRF_TRUSTED_ORIGINS = os.environ.get("DJANGO_CSRF_TRUSTED_ORIGINS", "").split(",")
+ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     "default": {
@@ -17,8 +15,5 @@ DATABASES = {
     }
 }
 
-# STATIC_ROOT = BASE_DIR / "staticfiles"
-# MEDIA_ROOT = BASE_DIR / "media"
-
-STATIC_ROOT = "/app/staticfiles"
-MEDIA_ROOT = "/app/media"
+STATIC_ROOT = BASE_DIR.parent / "static"
+MEDIA_ROOT = BASE_DIR.parent / "media"

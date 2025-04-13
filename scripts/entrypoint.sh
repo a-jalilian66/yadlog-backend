@@ -15,11 +15,11 @@ END
 echo "PostgreSQL is available!"
 
 echo "Applying database migrations..."
-python manage.py migrate
+python src/manage.py migrate
 
 if [ "$CREATE_SUPERUSER" = "true" ]; then
   echo "Creating superuser..."
-  python manage.py shell << END
+  python src/manage.py shell << END
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
@@ -32,4 +32,4 @@ END
 fi
 
 echo "Starting Django development server..."
-python manage.py runserver 0.0.0.0:8000
+python src/manage.py runserver 0.0.0.0:8000

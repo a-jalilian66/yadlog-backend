@@ -5,7 +5,7 @@ services:
   web:
     build: .
     command: bash /app/scripts/entrypoint.prod.sh
-    working_dir: /app/core
+    working_dir: /app
     volumes:
       - static_volume:/app/staticfiles
       - media_volume:/app/media
