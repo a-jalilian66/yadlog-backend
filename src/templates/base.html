@@ -8,7 +8,7 @@
     <title>{% block title %}یاد لاگ{% endblock %}</title>
     <link href="{% static 'output.css' %}" rel="stylesheet">
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body class="bg-gray-50 text-gray-900 font-display">
 {% include 'partials/header.html' %}
 
 <main>
@@ -16,5 +16,7 @@
 </main>
 
 {% include 'partials/footer.html' %}
+<script src="{% static 'bundle.js' %}" defer></script>
+
 </body>
 </html>
