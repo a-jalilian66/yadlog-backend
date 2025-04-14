@@ -95,3 +95,13 @@ docker-compose -f docker-compose.staging.yml up --build
 ```
 
 ---
+
+
+# Tailwind Build (Dev)
+cd frontend
+npm install
+npm run watch
+
+
+# Tailwind Build (Production)
+npm run build
