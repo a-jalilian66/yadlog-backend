@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}Yadlog – صفحه اصلی{% endblock %}
 
@@ -10,18 +11,17 @@
             <!-- 📝 Main Articles Section -->
 
             <div class="lg:col-span-8 order-2 lg:order-1">
-                <h2 class="font-bold text-gray-900 mb-6 text-lg bg-mint-500 ">مقالات و آموزش‌ها</h2>
-
-
-                <h2 class="text-2xl font-bold text-gray-900 mb-6">مرور بر اساس دسته</h2>
+                <h2 class="font-bold text-gray-900 mb-6 text-lg bg-mint-500 ">
+                    {% trans "Articles and Tutorials" %}
+                </h2>
 
                 <div class="space-y-6">
                     {% for post in posts %}
                         <article class="bg-white shadow p-6 rounded-lg hover:shadow-lg transition">
                             <h3 class="text-xl font-semibold mb-2">{{ post.title }}</h3>
                             <p class="text-gray-600 mb-4">{{ post.summary|truncatewords:25 }}</p>
-                            <a href="{{ post.get_absolute_url }}" class="text-blue-600 hover:text-blue-800 transition">ادامه
-                                مطلب</a>
+                            {#                            <a href="{{ post.get_absolute_url }}" class="text-blue-600 hover:text-blue-800 transition">ادامه#}
+                            {#                                مطلب</a>#}
                         </article>
                     {% empty %}
                         <p class="text-gray-500">هیچ مطلبی برای نمایش وجود ندارد.</p>

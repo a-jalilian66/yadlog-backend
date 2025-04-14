@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-13 10:47+0000\n"
+"POT-Creation-Date: 2025-04-14 21:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,95 +16,100 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: posts/models/base.py:8
+#: apps/posts/models/base.py:12
 msgid "Draft"
 msgstr "Draft"
 
-#: posts/models/base.py:9
+#: apps/posts/models/base.py:13
 msgid "Hidden"
 msgstr "Hidden"
 
-#: posts/models/base.py:10
+#: apps/posts/models/base.py:14
 #, fuzzy
 #| msgid "Published?"
 msgid "published"
 msgstr "Published?"
 
-#: posts/models/base.py:14 posts/models/category.py:12 posts/models/tag.py:6
+#: apps/posts/models/base.py:22 apps/posts/models/category.py:12
+#: apps/posts/models/tag.py:6
 msgid "Title"
 msgstr "Title"
 
-#: posts/models/base.py:15 posts/models/category.py:13 posts/models/tag.py:7
-msgid "Slug"
-msgstr "Slug"
-
-#: posts/models/base.py:15
+#: apps/posts/models/base.py:36
 msgid "Used in the URL of the post."
 msgstr "Used in the URL of the post."
 
-#: posts/models/base.py:17
+#: apps/posts/models/base.py:39
 msgid "Status"
 msgstr "Status"
 
-#: posts/models/base.py:18
+#: apps/posts/models/base.py:40
 msgid "Publication Date"
 msgstr "Publication Date"
 
-#: posts/models/base.py:20
+#: apps/posts/models/base.py:42
 msgid "Start publication"
 msgstr "Start publication"
 
-#: posts/models/base.py:21
+#: apps/posts/models/base.py:43
 msgid "End publication"
 msgstr ""
 
-#: posts/models/base.py:23
+#: apps/posts/models/base.py:45
 msgid "Created on"
 msgstr "Created on"
 
-#: posts/models/base.py:24
+#: apps/posts/models/base.py:46
 msgid "Last Updated"
 msgstr "Last Updated"
 
-#: posts/models/category.py:13
+#: apps/posts/models/category.py:13 apps/posts/models/tag.py:7
+msgid "Slug"
+msgstr "Slug"
+
+#: apps/posts/models/category.py:13
 msgid "Used to build category URL."
 msgstr "Used to build category URL."
 
-#: posts/models/category.py:15
+#: apps/posts/models/category.py:15
 msgid "Parent"
 msgstr "Parent"
 
-#: posts/models/category.py:46 posts/models/post.py:12
+#: apps/posts/models/category.py:46 apps/posts/models/post.py:13
 msgid "Category"
 msgstr "Category"
 
-#: posts/models/category.py:47
+#: apps/posts/models/category.py:47
 msgid "Categories"
 msgstr "Categories"
 
-#: posts/models/post.py:9
+#: apps/posts/models/post.py:10
 msgid "Summary"
 msgstr "Summary"
 
-#: posts/models/post.py:10
+#: apps/posts/models/post.py:11
 msgid "Content"
 msgstr "Content"
 
-#: posts/models/post.py:13 posts/models/tag.py:11
+#: apps/posts/models/post.py:14 apps/posts/models/tag.py:11
 msgid "Tags"
 msgstr "Tags"
 
-#: posts/models/post.py:19
+#: apps/posts/models/post.py:20
 msgid "Post"
 msgstr "Post"
 
-#: posts/models/post.py:20
+#: apps/posts/models/post.py:21
 msgid "Posts"
 msgstr "Posts"
 
-#: posts/models/tag.py:10
+#: apps/posts/models/tag.py:10
 msgid "Tag"
 msgstr "Tag"
+
+#: templates/home.html:15
+msgid "Articles and Tutorials"
+msgstr "Articles and Tutorials"
 
 #~ msgid "Published on"
 #~ msgstr "Published on"
