@@ -20,5 +20,8 @@ MEDIA_ROOT = BASE_DIR.parent / "media"
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, '..', 'frontend', 'dist'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 STATIC_URL = '/static/'
+
+print(STATIC_ROOT)

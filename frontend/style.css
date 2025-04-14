@@ -3,3 +3,18 @@
 @source "../src/templates/**/*.html";
 @source "../src/apps/**/*.html";
 @source "../src/**/*.py";
+
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('/static/fonts/Vazirmatn[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+body {
+    font-family: Vazirmatn, ui-sans-serif !important;
+    font-weight: 400;
+}

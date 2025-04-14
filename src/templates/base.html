@@ -1,20 +1,20 @@
+<!-- base.html -->
 {% load static %}
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>{% block title %}یادلاگ{% endblock %}</title>
-  <link href="{% static 'output.css' %}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}یاد لاگ{% endblock %}</title>
+    <link href="{% static 'output.css' %}" rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-gray-900 flex flex-col min-h-screen">
+<body class="bg-gray-50 text-gray-900 font-sans">
+{% include 'partials/header.html' %}
 
-  {% include "partials/header.html" %}
-
-  <main class="flex-1 container mx-auto p-4">
+<main>
     {% block content %}{% endblock %}
-  </main>
+</main>
 
-  {% include "partials/footer.html" %}
-
+{% include 'partials/footer.html' %}
 </body>
 </html>
