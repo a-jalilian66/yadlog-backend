@@ -199,3 +199,12 @@ docker-compose.override.yml
 
 # Python virtualenvs
 .venv/
+
+# Node.js
+frontend/node_modules/
+frontend/package-lock.json
+
+
+# Tailwind output
+frontend/dist/
+

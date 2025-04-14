@@ -65,7 +65,7 @@ ROOT_URLCONF = 'yadlog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,6 +121,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LANGUAGE_CODE = 'fa'
 USE_I18N = True
+USE_L10N = True
 
 LANGUAGES = [
     ('fa', 'فارسی'),
@@ -128,7 +129,7 @@ LANGUAGES = [
 ]
 
 LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'locale')
+    os.path.join(BASE_DIR, 'yadlog', 'locale')
 ]
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'fa'
