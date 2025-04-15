@@ -5,44 +5,89 @@
 {% block title %}Yadlog – صفحه اصلی{% endblock %}
 
 {% block content %}
-    <section class="bg-gradient-to-b from-blue-100 to-white py-16">
-        <div class="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 px-4">
 
-            <!-- 📝 Main Articles Section -->
 
-            <div class="lg:col-span-8 order-2 lg:order-1">
-                <h2 class="font-bold text-gray-900 mb-6 text-lg bg-mint-500 ">
-                    {% trans "Articles and Tutorials" %}
-                </h2>
+    <div class="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 px-4">
 
-                <div class="space-y-6">
-                    {% for post in posts %}
-                        <article class="bg-white shadow p-6 rounded-lg hover:shadow-lg transition">
-                            <h3 class="text-xl font-semibold mb-2">{{ post.title }}</h3>
-                            <p class="text-gray-600 mb-4">{{ post.summary|truncatewords:25 }}</p>
-                            {#                            <a href="{{ post.get_absolute_url }}" class="text-blue-600 hover:text-blue-800 transition">ادامه#}
-                            {#                                مطلب</a>#}
-                        </article>
-                    {% empty %}
-                        <p class="text-gray-500">هیچ مطلبی برای نمایش وجود ندارد.</p>
+
+        <div class="lg:col-span-8 order-2 lg:order-1">
+            <h2 class="font-bold mb-6 text-lg  text-regal-red">
+                {% trans "Articles and Tutorials" %}
+            </h2>
+
+            <div class="space-y-6">
+                {% for post in posts %}
+                    <article class="p-6 rounded-lg transition">
+                        <h3 class="text-xl font-semibold mb-2 font-bold hover:underline hover:cursor-pointer hover:decoration-blue-600 underline-offset-6">
+                            {{ post.title }}
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-base/7 mt-4">{{ post.summary|truncatewords:95 }}</p>
+                        <a href="#"
+                           class="group inline-flex items-center rtl:space-x-reverse space-x-1 hover-sound">
+                            <span class="font-medium">{% trans 'Read more' %}</span>
+                            <span class="arrow group-hover:animate-arrow flex items-center transform rtl:-scale-x-100">
+                                    <svg width="36" height="12" viewBox="0 0 36 12" fill="none">
+                                      <path d="M0.75 6H11.25" stroke="currentColor" stroke-width="1.5"
+                                            class="line text-blue-600"></path>
+                                      <path d="M6 0.75L11.25 6L6 11.25" stroke="currentColor" stroke-width="1.5"
+                                            class="arrow-part delay-0 text-blue-600"></path>
+                                      <path d="M15 10L19.5 5.5L15 1" stroke="currentColor" stroke-width="1.5"
+                                            class="arrow-part delay-1 text-blue-600"></path>
+                                      <path d="M23 10L27.5 5.5L23 1" stroke="currentColor" stroke-width="1.5"
+                                            class="arrow-part delay-2 text-blue-600"></path>
+                                      <path d="M31 10L35.5 5.5L31 1" stroke="currentColor" stroke-width="1.5"
+                                            class="arrow-part delay-3 text-blue-600"></path>
+                                    </svg>
+                                 </span>
+                        </a>
+                    </article>
+                {% empty %}
+                    <p class="text-gray-500">{% trans "There is no content to display." %}</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <aside class="lg:col-span-4 order-1 lg:order-2">
+
+            <div class="rounded-lg p-6">
+                <h2 class="text-lg font-bold mb-4 text-regal-red">{% trans 'Popular Categories' %}</h2>
+
+                <div class="flex flex-wrap gap-2">
+                    {% for category in categories %}
+                        <a href="#"
+                           class="hover-pop-sound bg-cyan-400 text-gray-700 text-sm px-2.5 py-1.5 rounded-md hover:bg-cyan-500 transition duration-200 ease-in-out transform hover:scale-105 whitespace-nowrap">
+                            {{ category.title }}
+                        </a>
                     {% endfor %}
                 </div>
             </div>
 
-            <!-- 📚 Sidebar (Browse by category) -->
-            <aside class="lg:col-span-4 order-1 lg:order-2">
-                <div class="bg-white shadow rounded-lg p-6">
-                    <h2 class="text-lg font-bold mb-4">مرور بر اساس دسته‌بندی</h2>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-blue-600 hover:underline">CSS</a></li>
-                        <li><a href="#" class="text-blue-600 hover:underline">JavaScript</a></li>
-                        <li><a href="#" class="text-blue-600 hover:underline">React</a></li>
-                        <li><a href="#" class="text-blue-600 hover:underline">Career</a></li>
-                        <li><a href="#" class="text-blue-600 hover:underline">Next.js</a></li>
-                    </ul>
-                </div>
-            </aside>
 
-        </div>
-    </section>
+            <div class="rounded-lg py-6">
+                <h2 class="text-lg px-6 font-bold mb-4 text-regal-red">{% trans 'Popular Content' %}</h2>
+
+                <div class="space-y-1.5">
+                    {% for category in popular %}
+                        <a href="#"
+                           class="group relative flex items-center text-gray-700 font-bold py-1.5 rounded-md hover:text-blue-600 transition duration-200 ps-4">
+
+                            <!-- فلش بیرون‌زده -->
+                            <span class="absolute right-full rtl:right-auto rtl:left-full rtl:ml-[-12px] ltr:mr-[-12px]">
+                                <svg class="w-4 h-4 transform transition-all duration-200 group-hover:-translate-x-1"
+                                     fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                  <path d="M19 12H5M11 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                              </span>
+                            <span class="px-2">{{ category.title }}</span>
+
+                        </a>
+
+
+                    {% endfor %}
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
 {% endblock %}

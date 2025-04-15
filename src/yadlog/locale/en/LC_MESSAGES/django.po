@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-14 21:14+0000\n"
+"POT-Creation-Date: 2025-04-15 11:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,7 +53,7 @@ msgstr "Start publication"
 
 #: apps/posts/models/base.py:43
 msgid "End publication"
-msgstr ""
+msgstr "End publication"
 
 #: apps/posts/models/base.py:45
 msgid "Created on"
@@ -107,9 +107,33 @@ msgstr "Posts"
 msgid "Tag"
 msgstr "Tag"
 
-#: templates/home.html:15
+#: templates/home.html:19
 msgid "Articles and Tutorials"
 msgstr "Articles and Tutorials"
+
+#: templates/home.html:31
+msgid "Read more"
+msgstr "Read more"
+
+#: templates/home.html:49
+msgid "There is no content to display."
+msgstr "There is no content to display."
+
+#: templates/home.html:57
+#, fuzzy
+#| msgid "Categories"
+msgid "Popular Categories"
+msgstr "Popular Categories"
+
+#: templates/home.html:71
+#, fuzzy
+#| msgid "Content"
+msgid "Popular Content"
+msgstr "Popular Content"
+
+#: templates/partials/hero.html:11
+msgid "What I learn, I write — from tiny tips to deep dev insights"
+msgstr "What I learn, I write — from tiny tips to deep dev insights"
 
 #~ msgid "Published on"
 #~ msgstr "Published on"

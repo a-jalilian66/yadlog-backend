@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls.i18n import i18n_patterns
 from django.urls import path, include
-from django.views.generic import TemplateView
+from django.shortcuts import redirect
+
+urlpatterns_lang = [
+    path('', lambda request: redirect('/fa/')),
+]
 
 urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
     path('', include('apps.posts.urls', namespace='posts'))
-)
+) + urlpatterns_lang
