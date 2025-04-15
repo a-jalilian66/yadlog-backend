@@ -10,39 +10,17 @@
 </head>
 <body class="text-gray-900 font-display">
 {% include 'partials/header.html' %}
-{% include 'partials/hero.html' %}
+{% include 'partials/hero.html' with hero_title=hero_title hero_subtitle=hero_subtitle %}
+
 
 <main>
     {% block content %}{% endblock %}
 </main>
 
 {% include 'partials/footer.html' %}
+
 <script src="{% static 'bundle.js' %}" defer></script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const hoverSound = new Audio("{% static 'sounds/bubble-popping.mp3' %}");
-        document.querySelectorAll('.hover-sound').forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                hoverSound.currentTime = 0;
-                hoverSound.play().catch(e => {
-                    console.warn('Sound blocked:', e);
-                });
-            });
-        });
-
-        const popSound = new Audio("{% static 'sounds/bubble-pop.mp3' %}");
-        document.querySelectorAll('.hover-pop-sound').forEach(link => {
-            link.addEventListener('popSound', () => {
-                popSound.currentTime = 0;
-                popSound.play().catch(e => {
-                    console.warn('Sound blocked:', e);
-                })
-            })
-        })
-    });
-</script>
-
+<script src="{% static 'js/hover-sounds.js' %}" defer></script>
 
 </body>
 </html>

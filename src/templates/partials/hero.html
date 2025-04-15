@@ -6,11 +6,14 @@
 
     <!-- متن وسط -->
     <div class="z-10">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">YadLog</h1>
-        <p class="text-lg md:text-xl max-w-xl mx-auto text-gray-700">
-            {% trans 'What I learn, I write — from tiny tips to deep dev insights' %}
-            {#            آنچه می‌آموزم، می‌نویسم — از نکات ریز تا تجربه‌های فنی#}
-        </p>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">
+            {{ hero_title|default:"YadLog" }}
+        </h1>
+        {% if hero_subtitle %}
+            <p class="text-lg md:text-xl max-w-xl mx-auto text-gray-700">
+                {{ hero_subtitle }}
+            </p>
+        {% endif %}
     </div>
 
     <!-- ابرها با پراکندگی واقعی‌تر -->

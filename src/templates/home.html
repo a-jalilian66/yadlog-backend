@@ -22,7 +22,7 @@
                             {{ post.title }}
                         </h3>
                         <p class="text-gray-600 mb-4 text-base/7 mt-4">{{ post.summary|truncatewords:95 }}</p>
-                        <a href="#"
+                        <a href="{{ post.get_absolute_url }}"
                            class="group inline-flex items-center rtl:space-x-reverse space-x-1 hover-sound">
                             <span class="font-medium">{% trans 'Read more' %}</span>
                             <span class="arrow group-hover:animate-arrow flex items-center transform rtl:-scale-x-100">

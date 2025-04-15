@@ -64,7 +64,7 @@ class BasePostModel(models.Model):
         return self.status == PostStatus.PUBLISHED and self.is_actual
 
     def get_absolute_url(self):
-        return reverse('blog:post_detail', kwargs={'slug': self.slug})
+        return reverse('posts:post_detail', kwargs={'slug': self.slug})
 
     def __str__(self):
         return f'{self.title} ({self.status})'

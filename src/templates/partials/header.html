@@ -1,3 +1,4 @@
+{% load i18n %}
 <nav class="bg-white shadow" x-data="{ open: false }" x-cloak>
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
@@ -36,9 +37,11 @@
 
                 <div class="hidden sm:mr-6 sm:block">
                     <div class="flex gap-4">
-                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">خانه</a>
-                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">دسته‌بندی‌ها</a>
-                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">درباره‌من</a>
+                        {% for item in menu_items %}
+                            <a class="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white"
+                               href="{% url item.url %}">{{ item.title }}</a>
+                        {% endfor %}
+
                     </div>
                 </div>
             </div>

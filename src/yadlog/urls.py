@@ -24,5 +24,6 @@ urlpatterns_lang = [
 
 urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
-    path('', include('apps.posts.urls', namespace='posts'))
+    path('', include('apps.posts.urls', namespace='posts')),
+    path('posts/', include('apps.posts.urls', namespace='posts'))
 ) + urlpatterns_lang
