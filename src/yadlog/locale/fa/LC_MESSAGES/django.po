@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-15 11:08+0000\n"
+"POT-Creation-Date: 2025-04-16 13:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,50 +16,69 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: apps/posts/models/base.py:12
+#: apps/common/context_processors.py:8
+msgctxt "menu"
+msgid "Home"
+msgstr "خانه"
+
+#: apps/common/context_processors.py:9
+msgctxt "menu"
+msgid "Categories"
+msgstr "دسته بندی ها"
+
+#: apps/common/context_processors.py:10
+msgctxt "menu"
+msgid "About Me"
+msgstr "درباره من"
+
+#: apps/common/context_processors.py:18
+msgid "Learn. Share. Code."
+msgstr "یاد بگیرید و به اشتراک بگذارید."
+
+#: apps/posts/models/base.py:10
 msgid "Draft"
 msgstr "پیش نویس"
 
-#: apps/posts/models/base.py:13
+#: apps/posts/models/base.py:11
 msgid "Hidden"
 msgstr "مخفی"
 
-#: apps/posts/models/base.py:14
+#: apps/posts/models/base.py:12
 #, fuzzy
 #| msgid "Published?"
 msgid "published"
 msgstr "منتشر شود؟"
 
-#: apps/posts/models/base.py:22 apps/posts/models/category.py:12
+#: apps/posts/models/base.py:16 apps/posts/models/category.py:12
 #: apps/posts/models/tag.py:6
 msgid "Title"
 msgstr "عنوان"
 
-#: apps/posts/models/base.py:36
+#: apps/posts/models/base.py:22
 msgid "Used in the URL of the post."
 msgstr "در آدرس پست استفاده شده است."
 
-#: apps/posts/models/base.py:39
+#: apps/posts/models/base.py:25
 msgid "Status"
 msgstr "وضعیت"
 
-#: apps/posts/models/base.py:40
+#: apps/posts/models/base.py:26
 msgid "Publication Date"
-msgstr ""
+msgstr "تاریخ انتشار"
 
-#: apps/posts/models/base.py:42
+#: apps/posts/models/base.py:28
 msgid "Start publication"
 msgstr "تاریخ شروع انتشار"
 
-#: apps/posts/models/base.py:43
+#: apps/posts/models/base.py:29
 msgid "End publication"
 msgstr "تاریخ پایان انتشار"
 
-#: apps/posts/models/base.py:45
+#: apps/posts/models/base.py:31
 msgid "Created on"
 msgstr "تاریخ ایجاد"
 
-#: apps/posts/models/base.py:46
+#: apps/posts/models/base.py:32
 msgid "Last Updated"
 msgstr "آخرین بروزرسانی"
 
@@ -75,7 +94,7 @@ msgstr "برای ساخت URL دسته بندی استفاده می شود."
 msgid "Parent"
 msgstr "دسته بندی والد"
 
-#: apps/posts/models/category.py:46 apps/posts/models/post.py:13
+#: apps/posts/models/category.py:46 apps/posts/models/post.py:14
 msgid "Category"
 msgstr "دسته بندی"
 
@@ -83,23 +102,23 @@ msgstr "دسته بندی"
 msgid "Categories"
 msgstr "دسته بندی ها"
 
-#: apps/posts/models/post.py:10
+#: apps/posts/models/post.py:11
 msgid "Summary"
 msgstr "خلاصه"
 
-#: apps/posts/models/post.py:11
+#: apps/posts/models/post.py:12
 msgid "Content"
 msgstr "محتوا"
 
-#: apps/posts/models/post.py:14 apps/posts/models/tag.py:11
+#: apps/posts/models/post.py:15 apps/posts/models/tag.py:11
 msgid "Tags"
 msgstr "برچسب ها"
 
-#: apps/posts/models/post.py:20
+#: apps/posts/models/post.py:21
 msgid "Post"
 msgstr "پست"
 
-#: apps/posts/models/post.py:21
+#: apps/posts/models/post.py:22
 msgid "Posts"
 msgstr "پست ها"
 
@@ -107,33 +126,28 @@ msgstr "پست ها"
 msgid "Tag"
 msgstr "برچسب"
 
-#: templates/home.html:19
+#: templates/home.html:15
 msgid "Articles and Tutorials"
 msgstr "مقالات و آموزش ها"
 
-#: templates/home.html:31
+#: templates/home.html:27
 msgid "Read more"
 msgstr "ادامه مطلب"
 
-#: templates/home.html:49
+#: templates/home.html:45
 msgid "There is no content to display."
 msgstr "محتوایی برای نمایش وجود ندارد."
 
-#: templates/home.html:57
-#, fuzzy
-#| msgid "Categories"
+#: templates/home.html:53
 msgid "Popular Categories"
-msgstr "دسته بندی ها"
+msgstr "دسته بندی های محبوب"
 
-#: templates/home.html:71
-#, fuzzy
-#| msgid "Content"
+#: templates/home.html:67
 msgid "Popular Content"
-msgstr "محتوا"
+msgstr "محتوای محبوب"
 
-#: templates/partials/hero.html:11
-msgid "What I learn, I write — from tiny tips to deep dev insights"
-msgstr "آنچه می آموزم می نویسم - از نکات ریز تا تجربه های فنی"
+#~ msgid "What I learn, I write — from tiny tips to deep dev insights"
+#~ msgstr "آنچه می آموزم می نویسم - از نکات ریز تا تجربه های فنی"
 
 #~ msgid "Published on"
 #~ msgstr "تاریخ انتشار"

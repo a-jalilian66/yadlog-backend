@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-15 11:08+0000\n"
+"POT-Creation-Date: 2025-04-16 13:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,50 +16,69 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps/posts/models/base.py:12
+#: apps/common/context_processors.py:8
+msgctxt "menu"
+msgid "Home"
+msgstr "Home"
+
+#: apps/common/context_processors.py:9
+msgctxt "menu"
+msgid "Categories"
+msgstr "Categories"
+
+#: apps/common/context_processors.py:10
+msgctxt "menu"
+msgid "About Me"
+msgstr "About Me"
+
+#: apps/common/context_processors.py:18
+msgid "Learn. Share. Code."
+msgstr "Learn. Share. Code."
+
+#: apps/posts/models/base.py:10
 msgid "Draft"
 msgstr "Draft"
 
-#: apps/posts/models/base.py:13
+#: apps/posts/models/base.py:11
 msgid "Hidden"
 msgstr "Hidden"
 
-#: apps/posts/models/base.py:14
+#: apps/posts/models/base.py:12
 #, fuzzy
 #| msgid "Published?"
 msgid "published"
 msgstr "Published?"
 
-#: apps/posts/models/base.py:22 apps/posts/models/category.py:12
+#: apps/posts/models/base.py:16 apps/posts/models/category.py:12
 #: apps/posts/models/tag.py:6
 msgid "Title"
 msgstr "Title"
 
-#: apps/posts/models/base.py:36
+#: apps/posts/models/base.py:22
 msgid "Used in the URL of the post."
 msgstr "Used in the URL of the post."
 
-#: apps/posts/models/base.py:39
+#: apps/posts/models/base.py:25
 msgid "Status"
 msgstr "Status"
 
-#: apps/posts/models/base.py:40
+#: apps/posts/models/base.py:26
 msgid "Publication Date"
 msgstr "Publication Date"
 
-#: apps/posts/models/base.py:42
+#: apps/posts/models/base.py:28
 msgid "Start publication"
 msgstr "Start publication"
 
-#: apps/posts/models/base.py:43
+#: apps/posts/models/base.py:29
 msgid "End publication"
 msgstr "End publication"
 
-#: apps/posts/models/base.py:45
+#: apps/posts/models/base.py:31
 msgid "Created on"
 msgstr "Created on"
 
-#: apps/posts/models/base.py:46
+#: apps/posts/models/base.py:32
 msgid "Last Updated"
 msgstr "Last Updated"
 
@@ -75,7 +94,7 @@ msgstr "Used to build category URL."
 msgid "Parent"
 msgstr "Parent"
 
-#: apps/posts/models/category.py:46 apps/posts/models/post.py:13
+#: apps/posts/models/category.py:46 apps/posts/models/post.py:14
 msgid "Category"
 msgstr "Category"
 
@@ -83,23 +102,23 @@ msgstr "Category"
 msgid "Categories"
 msgstr "Categories"
 
-#: apps/posts/models/post.py:10
+#: apps/posts/models/post.py:11
 msgid "Summary"
 msgstr "Summary"
 
-#: apps/posts/models/post.py:11
+#: apps/posts/models/post.py:12
 msgid "Content"
 msgstr "Content"
 
-#: apps/posts/models/post.py:14 apps/posts/models/tag.py:11
+#: apps/posts/models/post.py:15 apps/posts/models/tag.py:11
 msgid "Tags"
 msgstr "Tags"
 
-#: apps/posts/models/post.py:20
+#: apps/posts/models/post.py:21
 msgid "Post"
 msgstr "Post"
 
-#: apps/posts/models/post.py:21
+#: apps/posts/models/post.py:22
 msgid "Posts"
 msgstr "Posts"
 
@@ -107,33 +126,28 @@ msgstr "Posts"
 msgid "Tag"
 msgstr "Tag"
 
-#: templates/home.html:19
+#: templates/home.html:15
 msgid "Articles and Tutorials"
 msgstr "Articles and Tutorials"
 
-#: templates/home.html:31
+#: templates/home.html:27
 msgid "Read more"
 msgstr "Read more"
 
-#: templates/home.html:49
+#: templates/home.html:45
 msgid "There is no content to display."
 msgstr "There is no content to display."
 
-#: templates/home.html:57
-#, fuzzy
-#| msgid "Categories"
+#: templates/home.html:53
 msgid "Popular Categories"
 msgstr "Popular Categories"
 
-#: templates/home.html:71
-#, fuzzy
-#| msgid "Content"
+#: templates/home.html:67
 msgid "Popular Content"
 msgstr "Popular Content"
 
-#: templates/partials/hero.html:11
-msgid "What I learn, I write — from tiny tips to deep dev insights"
-msgstr "What I learn, I write — from tiny tips to deep dev insights"
+#~ msgid "What I learn, I write — from tiny tips to deep dev insights"
+#~ msgstr "What I learn, I write — from tiny tips to deep dev insights"
 
 #~ msgid "Published on"
 #~ msgstr "Published on"
