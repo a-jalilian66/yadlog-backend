@@ -4,11 +4,12 @@ from django.utils.translation import gettext_lazy as _
 from .base import BasePostModel
 from .managers import PublishedPostManager
 from apps.common.mixins.translated_slug import TranslatedSlugMixin
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Post(TranslatedSlugMixin, BasePostModel):
-    summary = models.TextField(_('Summary'), blank=True, null=True)
-    content = models.TextField(_('Content'))
+    summary = RichTextUploadingField(_('Summary'), blank=True, null=True)
+    content = RichTextUploadingField(_('Content'), config_name='awesome_ckeditor')
     category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True, blank=True,
                                  verbose_name=_('Category'))
     tags = models.ManyToManyField('Tag', blank=True, verbose_name=_('Tags'))

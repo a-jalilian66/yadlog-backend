@@ -3,9 +3,7 @@ from django.utils import timezone
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
-from autoslug import AutoSlugField
 from django.utils.text import slugify as django_slugify
-from unidecode import unidecode
 
 
 class PostStatus(models.TextChoices):
@@ -14,25 +12,13 @@ class PostStatus(models.TextChoices):
     PUBLISHED = 'published', _('published')
 
 
-def persian_slugify(value):
-    return django_slugify(value, allow_unicode=True)
-
-
 class BasePostModel(models.Model):
     title = models.CharField(_('Title'), max_length=255)
-    # slug = models.SlugField(_('Slug'), unique=True, help_text=_("Used in the URL of the post."))
 
-    # slug = AutoSlugField(
-    #     populate_from='title',
-    #     slugify=persian_slugify,
-    #     unique=True,
-    #     allow_unicode=True,
-    #     always_update=False,
-    #     help_text=_("Used in the URL of the post.")
-    # )
     slug = models.SlugField(
         blank=True,
         unique=True,
+        allow_unicode=True,
         help_text=_("Used in the URL of the post.")
     )
 

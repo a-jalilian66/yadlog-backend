@@ -23,5 +23,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 STATIC_URL = '/static/'
-
-print(STATIC_ROOT)
+MEDIA_URL = '/media/'

@@ -17,8 +17,8 @@ DATABASES = {
     }
 }
 
-STATIC_ROOT = os.path.join(BASE_DIR.parent, "staticfiles")
-MEDIA_ROOT = os.path.join(BASE_DIR.parent, "media")
+STATIC_ROOT = BASE_DIR.parent / "static"
+MEDIA_ROOT = BASE_DIR.parent / "media"
 
-# STATIC_ROOT = "/app/staticfiles"
-# MEDIA_ROOT = "/app/media"
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'

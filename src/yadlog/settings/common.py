@@ -13,6 +13,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 
+from apps.common.editors.ckeditor_config import (
+    CKEDITOR_UPLOAD_PATH,
+    CKEDITOR_CONFIGS,
+)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -42,6 +47,8 @@ INSTALLED_APPS = [
 
     # Third Party
     'mptt',
+    'ckeditor',
+    'ckeditor_uploader',
 
     # my apps
     'apps.posts'

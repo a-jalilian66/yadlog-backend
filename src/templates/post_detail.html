@@ -4,8 +4,11 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
+
+
     <article class="max-w-screen-xl mx-auto pt-16 px-4 pb-24">
-        <div class="text-gray-700 leading-relaxed">
+
+        <div class="cke_editable">
             {{ post.content|safe }}
         </div>
     </article>
