@@ -17,6 +17,9 @@ echo "PostgreSQL is available!"
 echo "Running database migrations..."
 python src/manage.py migrate --noinput
 
+eecho "Building frontend assets..."
+cd frontend && npm install && npm run build && cd ..
+
 echo "Collecting static files..."
 python src/manage.py collectstatic --noinput
 

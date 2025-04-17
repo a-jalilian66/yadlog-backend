@@ -207,4 +207,5 @@ frontend/package-lock.json
 
 # Tailwind output
 frontend/dist/
-
+static/
+media/
