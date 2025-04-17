@@ -5,6 +5,8 @@ version: '3.9'
 services:
   web:
     build: .
+    image: yadlog-backend:web-dev
+    container_name: yadlog_web_dev
     command: bash /app/scripts/entrypoint.sh
     working_dir: /app
     volumes:
@@ -18,13 +20,14 @@ services:
 
   db:
     image: postgres:17
+    container_name: yadlog_postgres_dev
     restart: always
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
+      - yadlog_postgres_data:/var/lib/postgresql/data/
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
 volumes:
-  postgres_data:
+  yadlog_postgres_data:

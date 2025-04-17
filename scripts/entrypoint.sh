@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "Development Env"
 echo "Waiting for postgres to be ready..."
 python << END
 import time

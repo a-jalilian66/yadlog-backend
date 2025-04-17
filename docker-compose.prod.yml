@@ -1,43 +1,63 @@
-
 version: '3.9'
 
 services:
   web:
     build: .
+    container_name: yadlog_web
+    image: yadlog-backend:web-prod
     command: bash /app/scripts/entrypoint.prod.sh
     working_dir: /app
     volumes:
-      - static_volume:/app/staticfiles
-      - media_volume:/app/media
+      - yadlog_static_volume:/app/staticfiles
+      - yadlog_media_volume:/app/media
     expose:
       - "8000"
     env_file:
       - .env
     depends_on:
       - db
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   nginx:
     image: nginx:alpine
+    container_name: yadlog_nginx
     ports:
       - "80:80"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - static_volume:/app/staticfiles
-      - media_volume:/app/media
+      - yadlog_static_volume:/app/staticfiles
+      - yadlog_media_volume:/app/media
     depends_on:
       - web
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "2"
 
   db:
     image: postgres:17
+    container_name: yadlog_postgres
     restart: always
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
+      - yadlog_postgres_data:/var/lib/postgresql/data/
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "2"
 
 volumes:
-  postgres_data:
-  static_volume:
-  media_volume:
+  yadlog_postgres_data:
+  yadlog_static_volume:
+  yadlog_media_volume:

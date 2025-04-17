@@ -209,3 +209,7 @@ frontend/package-lock.json
 frontend/dist/
 static/
 media/
+
+
+# Ignore compiled translation files
+**/locale/*/LC_MESSAGES/*.mo

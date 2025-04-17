@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "Production Env"
 echo "Waiting for postgres to be ready..."
 python << END
 import time
@@ -17,8 +18,8 @@ echo "PostgreSQL is available!"
 echo "Running database migrations..."
 python src/manage.py migrate --noinput
 
-eecho "Building frontend assets..."
-cd frontend && npm install && npm run build && cd ..
+echo "Compiling translation messages..."
+python src/manage.py compilemessages
 
 echo "Collecting static files..."
 python src/manage.py collectstatic --noinput
