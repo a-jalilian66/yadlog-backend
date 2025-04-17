@@ -3,8 +3,6 @@ from django.utils import timezone
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
-from django.utils.text import slugify as django_slugify
-
 
 class PostStatus(models.TextChoices):
     DRAFT = 'draft', _('Draft')
