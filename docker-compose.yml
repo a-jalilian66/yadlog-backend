@@ -11,6 +11,7 @@ services:
     working_dir: /app
     volumes:
       - .:/app
+      - /app/frontend/node_modules
     ports:
       - "8001:8000"
     env_file:
