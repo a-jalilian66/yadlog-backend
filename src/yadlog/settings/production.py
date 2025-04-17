@@ -17,8 +17,17 @@ DATABASES = {
     }
 }
 
-STATIC_ROOT = BASE_DIR.parent / "static"
+# Final path for collectstatic
+STATIC_ROOT = BASE_DIR.parent / "staticfiles"
+
+# Path to uploaded files
 MEDIA_ROOT = BASE_DIR.parent / "media"
+
+# We are going to collect static files from these paths.
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR.parent, 'frontend', 'dist'),  # Tailwind build output
+    os.path.join(BASE_DIR, 'static'),  # manually written static files
+]
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'

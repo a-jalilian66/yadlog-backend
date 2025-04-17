@@ -15,11 +15,11 @@ DATABASES = {
     }
 }
 
-STATIC_ROOT = BASE_DIR.parent / "static"
+# STATIC_ROOT = BASE_DIR.parent / "static"
 MEDIA_ROOT = BASE_DIR.parent / "media"
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '..', 'frontend', 'dist'),
+    os.path.join(BASE_DIR.parent, 'frontend', 'dist'),
     os.path.join(BASE_DIR, 'static'),
 ]
 STATIC_URL = '/static/'
