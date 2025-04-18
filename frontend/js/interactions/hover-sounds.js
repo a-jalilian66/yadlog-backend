@@ -1,3 +1,6 @@
+// js/interactions/hover-sounds.js
+// 🔊 UI interaction – Play sound on hover for interactive elements
+
 document.addEventListener('DOMContentLoaded', function () {
     const hoverSound = new Audio("/static/sounds/bubble-popping.mp3");
     const popSound = new Audio("/static/sounds/bubble-pop.mp3");

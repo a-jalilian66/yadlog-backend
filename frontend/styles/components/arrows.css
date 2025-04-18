@@ -1,0 +1,33 @@
+/* ========================================
+   🔗 CKEditor Inline Links – Arrow Hover Effect
+   🧩 Applies only on rendered frontend content
+   ======================================== */
+
+.arrow-part, .line {
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+.group:hover .line {
+    @apply delay-[0ms];
+}
+
+.group:hover .arrow-part.delay-0 {
+    opacity: 1;
+    transition-delay: 0ms;
+}
+
+.group:hover .arrow-part.delay-1 {
+    opacity: 1;
+    transition-delay: 125ms;
+}
+
+.group:hover .arrow-part.delay-2 {
+    opacity: 1;
+    transition-delay: 250ms;
+}
+
+.group:hover .arrow-part.delay-3 {
+    opacity: 1;
+    transition-delay: 375ms;
+}

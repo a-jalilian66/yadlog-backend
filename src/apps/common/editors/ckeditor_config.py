@@ -35,7 +35,7 @@ CKEDITOR_CONFIGS = {
         'extraPlugins': ','.join([
             'templates', 'justify', 'lineheight', 'tabletools', 'tableresize',
             'blockquote', 'showblocks', 'colorbutton', 'panel', 'floatpanel', 'richcombo',
-            'bidi', 'pastefromgdocs', 'pastetools', 'stylescombo'
+            'bidi', 'pastefromgdocs', 'pastetools', 'stylescombo', 'codesnippet', 'toc'
         ]),
         'line_height': '1.4em;1.6em;1.8em;2em;2.2em;2.5em;3em',
 
@@ -54,6 +54,27 @@ CKEDITOR_CONFIGS = {
         'font_defaultLabel': 'Vazirmatn, sans-serif',
         'stylesSet': [
             # Custom
+            {
+                "name": 'TOC Level 1',
+                "element": 'div',
+                "attributes": {
+                    'class': 'ckeditor-toc toc-level-1'
+                }
+            },
+            {
+                "name": 'TOC Level 2',
+                "element": 'div',
+                "attributes": {
+                    'class': 'ckeditor-toc toc-level-2'
+                }
+            },
+            {
+                "name": 'TOC Level 3',
+                "element": 'div',
+                "attributes": {
+                    'class': 'ckeditor-toc toc-level-3'
+                }
+            },
             {
                 "name": "Info Box",
                 "element": "div",
@@ -234,14 +255,14 @@ CKEDITOR_CONFIGS = {
                     "class": "image-grayscale"
                 }
             },
-            {
-                "name": "Featured Snippet",
-                "type": "widget",
-                "widget": "codeSnippet",
-                "attributes": {
-                    "class": "code-featured"
-                }
-            },
+            # {
+            #     "name": "Featured Snippet",
+            #     "type": "widget",
+            #     "widget": "codeSnippet",
+            #     "attributes": {
+            #         "class": "code-featured"
+            #     }
+            # },
             {
                 "name": "Featured Formula",
                 "type": "widget",

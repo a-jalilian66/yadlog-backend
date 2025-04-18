@@ -6,3 +6,4 @@ django-mptt
 django-autoslug
 unidecode
 django-ckeditor
+beautifulsoup4

@@ -1,0 +1,26 @@
+@import "tailwindcss" source(none);
+
+/* enable typography plugin directly */
+@plugin '@tailwindcss/typography';
+
+@import "./theme.css";
+@import "./fonts.css";
+
+/* base styles */
+@import "./components/base-styles.css";
+
+/* ckeditor-rendered content */
+@import "./ckeditor/ckeditor.code-block.css";
+@import "./ckeditor/ckeditor.highlight-theme.css";
+
+/* general UI components */
+@import "./components/arrows.css";
+
+/*Post Page Styles*/
+@import "./pages/post.css";
+
+@source "../../src/templates/**/*.html";
+@source "../../src/apps/**/*.html";
+@source "../../src/**/*.py";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));

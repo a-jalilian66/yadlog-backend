@@ -1,10 +1,18 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from apps.common.mixins.translated_slug import TranslatedSlugMixin
 
-class Tag(models.Model):
+
+class Tag(TranslatedSlugMixin, models.Model):
     title = models.CharField(_('Title'), max_length=50)
-    slug = models.SlugField(_('Slug'), unique=True)
+    slug = models.SlugField(
+        _('Slug'),
+        blank=True,
+        unique=True,
+        allow_unicode=True,
+        help_text=_("Used to build category URL.")
+    )
 
     class Meta:
         verbose_name = _('Tag')

@@ -1,0 +1,27 @@
+@utility article-container {
+    @apply w-full lg:w-4/5 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+@utility article-content {
+    @apply w-full lg:grid lg:grid-cols-4 lg:gap-6;
+}
+
+@utility main-content {
+    @apply lg:col-span-3 font-sans leading-7 text-gray-800;
+}
+
+@utility toc-list {
+    @apply hidden lg:block lg:col-span-1 text-sm text-gray-600 sticky top-4;
+}
+
+@utility toc-level-1 {
+    @apply ps-0 rtl:pe-0;
+}
+
+@utility toc-level-2 {
+    @apply ps-4 rtl:pe-4;
+}
+
+@utility toc-level-3 {
+    @apply ps-8 rtl:pe-8;
+}

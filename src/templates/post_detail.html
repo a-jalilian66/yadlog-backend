@@ -6,10 +6,26 @@
 {% block content %}
 
 
-    <article class="max-w-screen-xl mx-auto pt-16 px-4 pb-24">
+    <div class="article-container">
+        <div class="article-content">
+            <article class="main-content">
+                <div class="cke_editable">
+                    {{ post.content|safe }}
+                </div>
+            </article>
+            <nav class="toc-list" aria-label="{% trans 'Table of Contents' %}">
+                <h2 class="font-semibold">{% trans 'Table of Contents' %}</h2>
 
-        <div class="cke_editable">
-            {{ post.content|safe }}
+                <ul class="space-y-2">
+                    {% for item in toc %}
+                        <li class="toc-level-{{ item.level }}">
+                            <a href="#{{ item.id }}" class="hover:underline block">
+                                {{ item.text }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
         </div>
-    </article>
+    </div>
 {% endblock %}

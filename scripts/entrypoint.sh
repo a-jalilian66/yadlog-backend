@@ -1,6 +1,13 @@
 #!/bin/bash
 
 echo "Development Env"
+
+# Fix esbuild and other native modules for current platform
+echo "Cleaning node_modules and reinstalling for current platform..."
+cd frontend
+rm -rf node_modules
+cd ..
+
 echo "Waiting for postgres to be ready..."
 python << END
 import time

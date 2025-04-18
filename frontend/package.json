@@ -2,18 +2,21 @@
   "name": "frontend",
   "version": "1.0.0",
   "scripts": {
-    "build": "postcss style.css -o dist/output.css && esbuild main.js --bundle --outfile=dist/bundle.js",
-    "watch": "postcss style.css -o dist/output.css --watch"
+    "build": "postcss styles/tailwind.css -o dist/output.css && esbuild js/main.js --bundle --outfile=dist/bundle.js",
+    "watch": "postcss styles/tailwind.css -o dist/output.css --watch"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.4",
     "alpinejs": "^3.14.9",
-    "postcss": "^8.5.3",
+    "highlight.js": "^11.11.1",
     "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.4",
+    "@tailwindcss/typography": "^0.5.16",
+    "autoprefixer": "^10.4.21",
     "esbuild": "^0.25.2",
+    "postcss": "^8.5.3",
     "postcss-cli": "^11.0.1"
   }
 }

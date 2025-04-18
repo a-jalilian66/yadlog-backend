@@ -1,13 +1,12 @@
 <!-- base.html -->
 {% load static %}
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{% block title %}یاد لاگ{% endblock %}</title>
     <link href="{% static 'output.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'ckeditor/styles.css' %}">
 
 </head>
 <body class="text-gray-900 font-display">
@@ -21,8 +20,8 @@
 
 {% include 'partials/footer.html' %}
 
+
 <script src="{% static 'bundle.js' %}" defer></script>
-<script src="{% static 'js/hover-sounds.js' %}" defer></script>
 
 </body>
 </html>
