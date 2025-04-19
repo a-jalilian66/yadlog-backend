@@ -3,11 +3,7 @@ from mptt.models import MPTTModel, TreeForeignKey
 from django.utils.translation import gettext_lazy as _
 
 from apps.common.mixins.translated_slug import TranslatedSlugMixin
-
-
-class CategoryManager(models.Manager):
-    def with_published_posts(self):
-        return self.filter(post__is_published=True).distinct()
+from apps.posts.models.managers import CategoryManager
 
 
 class Category(TranslatedSlugMixin, MPTTModel):

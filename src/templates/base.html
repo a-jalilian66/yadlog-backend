@@ -1,13 +1,12 @@
 <!-- base.html -->
 {% load static %}
 <!DOCTYPE html>
-<html lang="fa" dir="rtl" data-theme="light">
+<html lang="fa" dir="rtl" data-theme="light" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>{% block title %}یاد لاگ{% endblock %}</title>
+    {% block meta %}{% endblock %}
     <link href="{% static 'output.css' %}" rel="stylesheet">
-
 </head>
 <body class="text-gray-900 font-display">
 {% include 'partials/header.html' %}

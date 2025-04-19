@@ -20,7 +20,8 @@ class HomePageView(TemplateView):
         context['page_number'] = page
 
         # Categories section
-        context['categories'] = Category.objects.all()[:8]
+        category_published = Category.objects.with_published_posts()[:8]
+        context['categories'] = category_published
         context['hero_title'] = "YadLog"
         context['hero_subtitle'] = "آنچه می‌آموزم، می‌نویسم — از نکات ریز تا تجربه‌های فنی"
 

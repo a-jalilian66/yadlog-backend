@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django.contrib.sitemaps',
+    'django.contrib.sites',
+
     # Third Party
     'mptt',
     'ckeditor',
@@ -125,21 +128,28 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# LANGUAGE_CODE = 'en-us'
-# USE_I18N = True
+MULTILANGUAGE_ENABLED = os.getenv('MULTILANGUAGE_ENABLED', 'False') == 'True'
 
 LANGUAGE_CODE = 'fa'
 USE_I18N = True
 USE_L10N = True
 
-LANGUAGES = [
-    ('fa', 'فارسی'),
-    ('en', 'English'),
-]
+if MULTILANGUAGE_ENABLED:
+    LANGUAGES = [
+        ('fa', 'فارسی'),
+        ('en', 'English'),
+        # You can add other languages here.
+    ]
+else:
+    LANGUAGES = [
+        ('fa', 'فارسی'),
+    ]
 
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'yadlog', 'locale')
 ]
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'fa'
-MODELTRANSLATION_LANGUAGES = ('fa', 'en')
+MODELTRANSLATION_LANGUAGES = ('fa', 'en') if MULTILANGUAGE_ENABLED else ('fa',)
+
+SITE_ID = 1

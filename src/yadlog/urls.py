@@ -17,19 +17,41 @@ from django.conf import settings
 from django.contrib import admin
 from django.conf.urls.i18n import i18n_patterns
 from django.urls import path, include
-from django.shortcuts import redirect
 from django.conf.urls.static import static
 
-urlpatterns_lang = [
-    path('', lambda request: redirect('/fa/')),
-]
+from django.contrib.sitemaps.views import sitemap
 
-urlpatterns = i18n_patterns(
-    path('admin/', admin.site.urls),
-    path('', include('apps.posts.urls', namespace='posts')),
-    # path('posts/', include('apps.posts.urls', namespace='posts')),
-    path('ckeditor/', include('ckeditor_uploader.urls')),
-) + urlpatterns_lang
+from apps.common.sitemaps import PostSiteMap, StaticSitemap, TagSitemap, CategorySitemap
+
+sitemaps = {
+    'posts': PostSiteMap,
+    'categories': CategorySitemap,
+    'tags': TagSitemap,
+    'static': StaticSitemap
+}
+
+# Base URLs
+urlpatterns = []
+
+# If multilingual is enabled
+if settings.MULTILANGUAGE_ENABLED:
+    urlpatterns += [
+        path('i18n/', include('django.conf.urls.i18n')),  # To change language
+    ]
+    urlpatterns += i18n_patterns(
+        path('admin/', admin.site.urls),
+        path('', include('apps.posts.urls', namespace='posts')),
+        path('ckeditor/', include('ckeditor_uploader.urls')),
+        path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    )
+else:
+    # without language prefix
+    urlpatterns += [
+        path('admin/', admin.site.urls),
+        path('', include('apps.posts.urls', namespace='posts')),
+        path('ckeditor/', include('ckeditor_uploader.urls')),
+        path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

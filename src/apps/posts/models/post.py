@@ -13,8 +13,8 @@ class Post(TranslatedSlugMixin, BasePostModel):
     summary = RichTextUploadingField(_('Summary'), blank=True, null=True, config_name='awesome_ckeditor')
     content = RichTextUploadingField(_('Content'), config_name='awesome_ckeditor')
     category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True, blank=True,
-                                 verbose_name=_('Category'))
-    tags = models.ManyToManyField('Tag', blank=True, verbose_name=_('Tags'))
+                                 verbose_name=_('Category'), related_name='posts')
+    tags = models.ManyToManyField('Tag', blank=True, verbose_name=_('Tags'), related_name='posts')
     toc = models.JSONField(_('Table of content'), blank=True, null=True)
 
     objects = models.Manager()

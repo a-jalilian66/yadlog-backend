@@ -1,5 +1,16 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load url_filters %}
+
+{% block meta %}
+    <meta name="description" content="{{ post.summary|default:post.title|striptags }}">
+    <meta property="og:title" content="{{ post.title|striptags }}">
+    <meta property="og:description" content="{{ post.summary|striptags|truncatechars:160 }}">
+    <meta property="og:url" content="{{ request.build_absolute_uri|urlunquote }}">
+    <meta property="og:type" content="article">
+    <meta name="robots" content="index, follow">
+{% endblock %}
+
 
 {% block title %}{{ post.title }}{% endblock %}
 
