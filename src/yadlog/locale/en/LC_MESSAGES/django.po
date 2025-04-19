@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-16 13:07+0000\n"
+"POT-Creation-Date: 2025-04-19 00:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,116 +35,124 @@ msgstr "About Me"
 msgid "Learn. Share. Code."
 msgstr "Learn. Share. Code."
 
-#: apps/posts/models/base.py:10
+#: apps/posts/models/base.py:8
 msgid "Draft"
 msgstr "Draft"
 
-#: apps/posts/models/base.py:11
+#: apps/posts/models/base.py:9
 msgid "Hidden"
 msgstr "Hidden"
 
-#: apps/posts/models/base.py:12
+#: apps/posts/models/base.py:10
 #, fuzzy
 #| msgid "Published?"
 msgid "published"
 msgstr "Published?"
 
-#: apps/posts/models/base.py:16 apps/posts/models/category.py:12
-#: apps/posts/models/tag.py:6
+#: apps/posts/models/base.py:14 apps/posts/models/category.py:14
+#: apps/posts/models/tag.py:8
 msgid "Title"
 msgstr "Title"
 
-#: apps/posts/models/base.py:22
+#: apps/posts/models/base.py:20
 msgid "Used in the URL of the post."
 msgstr "Used in the URL of the post."
 
-#: apps/posts/models/base.py:25
+#: apps/posts/models/base.py:23
 msgid "Status"
 msgstr "Status"
 
-#: apps/posts/models/base.py:26
+#: apps/posts/models/base.py:24
 msgid "Publication Date"
 msgstr "Publication Date"
 
-#: apps/posts/models/base.py:28
+#: apps/posts/models/base.py:26
 msgid "Start publication"
 msgstr "Start publication"
 
-#: apps/posts/models/base.py:29
+#: apps/posts/models/base.py:27
 msgid "End publication"
 msgstr "End publication"
 
-#: apps/posts/models/base.py:31
+#: apps/posts/models/base.py:29
 msgid "Created on"
 msgstr "Created on"
 
-#: apps/posts/models/base.py:32
+#: apps/posts/models/base.py:30
 msgid "Last Updated"
 msgstr "Last Updated"
 
-#: apps/posts/models/category.py:13 apps/posts/models/tag.py:7
+#: apps/posts/models/category.py:16 apps/posts/models/tag.py:10
 msgid "Slug"
 msgstr "Slug"
 
-#: apps/posts/models/category.py:13
+#: apps/posts/models/category.py:20 apps/posts/models/tag.py:14
 msgid "Used to build category URL."
 msgstr "Used to build category URL."
 
-#: apps/posts/models/category.py:15
+#: apps/posts/models/category.py:23
 msgid "Parent"
 msgstr "Parent"
 
-#: apps/posts/models/category.py:46 apps/posts/models/post.py:14
+#: apps/posts/models/category.py:54 apps/posts/models/post.py:16
 msgid "Category"
 msgstr "Category"
 
-#: apps/posts/models/category.py:47
+#: apps/posts/models/category.py:55
 msgid "Categories"
 msgstr "Categories"
 
-#: apps/posts/models/post.py:11
+#: apps/posts/models/post.py:13
 msgid "Summary"
 msgstr "Summary"
 
-#: apps/posts/models/post.py:12
+#: apps/posts/models/post.py:14
 msgid "Content"
 msgstr "Content"
 
-#: apps/posts/models/post.py:15 apps/posts/models/tag.py:11
+#: apps/posts/models/post.py:17 apps/posts/models/tag.py:19
 msgid "Tags"
 msgstr "Tags"
 
-#: apps/posts/models/post.py:21
+#: apps/posts/models/post.py:18
+msgid "Table of content"
+msgstr "Table of Content"
+
+#: apps/posts/models/post.py:24
 msgid "Post"
 msgstr "Post"
 
-#: apps/posts/models/post.py:22
+#: apps/posts/models/post.py:25
 msgid "Posts"
 msgstr "Posts"
 
-#: apps/posts/models/tag.py:10
+#: apps/posts/models/tag.py:18
 msgid "Tag"
 msgstr "Tag"
 
-#: templates/home.html:15
+#: templates/home.html:16
 msgid "Articles and Tutorials"
 msgstr "Articles and Tutorials"
 
-#: templates/home.html:27
+#: templates/home.html:30
 msgid "Read more"
 msgstr "Read more"
 
-#: templates/home.html:45
+#: templates/home.html:48
 msgid "There is no content to display."
 msgstr "There is no content to display."
 
-#: templates/home.html:53
+#: templates/home.html:56
 msgid "Popular Categories"
 msgstr "Popular Categories"
 
-#: templates/home.html:67
+#: templates/home.html:70
 msgid "Popular Content"
 msgstr "Popular Content"
+
+#: templates/post_detail.html:16 templates/post_detail.html:17
+msgid "Table of Contents"
+msgstr "Table of Contents"
 
 #~ msgid "What I learn, I write — from tiny tips to deep dev insights"
 #~ msgstr "What I learn, I write — from tiny tips to deep dev insights"
