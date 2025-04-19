@@ -35,7 +35,7 @@ CKEDITOR_CONFIGS = {
         'extraPlugins': ','.join([
             'templates', 'justify', 'lineheight', 'tabletools', 'tableresize',
             'blockquote', 'showblocks', 'colorbutton', 'panel', 'floatpanel', 'richcombo',
-            'bidi', 'pastefromgdocs', 'pastetools', 'stylescombo', 'codesnippet', 'toc'
+            'bidi', 'pastefromgdocs', 'pastetools', 'stylescombo', 'codesnippet',
         ]),
         'line_height': '1.4em;1.6em;1.8em;2em;2.2em;2.5em;3em',
 
