@@ -23,7 +23,7 @@ def extract_toc_and_ids(html):
         if level is None:
             continue  # This div has nothing to do with TOC
 
-        text = tag.get_text(strip=True)
+        text = tag.get('title') or tag.get_text(strip=True)
 
         if not tag.get('id'):
             base_id = slugify(text, allow_unicode=False)

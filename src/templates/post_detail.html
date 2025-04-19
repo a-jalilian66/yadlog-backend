@@ -7,25 +7,27 @@
 
 
     <div class="article-container">
-        <div class="article-content">
-            <article class="main-content">
+        <div class="{% if toc %}article-content lg:grid lg:grid-cols-4 lg:gap-6{% else %}w-full{% endif %}">
+            <article class="{% if toc %}lg:col-span-3{% else %}w-full{% endif %} font-sans leading-7 text-gray-800">
                 <div class="cke_editable">
                     {{ post.content|safe }}
                 </div>
             </article>
-            <nav class="toc-list" aria-label="{% trans 'Table of Contents' %}">
-                <h2 class="font-semibold">{% trans 'Table of Contents' %}</h2>
+            {% if toc %}
+                <nav class="toc-list" aria-label="{% trans 'Table of Contents' %}">
+                    <h2 class="font-semibold">{% trans 'Table of Contents' %}</h2>
 
-                <ul class="space-y-2">
-                    {% for item in toc %}
-                        <li class="toc-level-{{ item.level }}">
-                            <a href="#{{ item.id }}" class="hover:underline block">
-                                {{ item.text }}
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </nav>
+                    <ul class="space-y-2">
+                        {% for item in toc %}
+                            <li class="toc-level-{{ item.level }}">
+                                <a href="#{{ item.id }}" class="hover:block">
+                                    {{ item.text }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

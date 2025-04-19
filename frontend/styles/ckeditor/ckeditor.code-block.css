@@ -4,7 +4,8 @@
    ======================================== */
 @layer components {
     .code-wrapper {
-        @apply w-full sm:w-4/5 md:w-8/10 lg:w-[80%] font-mono text-sm my-6 rounded-md overflow-hidden mx-auto;
+        /*@apply w-full sm:w-4/5 md:w-8/10 lg:w-[80%] font-mono text-sm my-6 rounded-md overflow-hidden mx-auto;*/
+        @apply w-full font-mono text-sm my-6 rounded-md overflow-hidden mx-auto;
         direction: ltr;
     }
 
