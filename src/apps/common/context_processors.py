@@ -14,9 +14,12 @@ def main_menu(request):
 
 def site_info(request):
     return {
-        "site_title": "Yadlog",
-        "site_tagline": _("Learn. Share. Code."),
-        "social_links": {
-            "github": "https://github.com/a-jalilian66",
+        "site_info": {
+            "title": "Yadlog",
+            'description': _("I write what I learn - from little tips to in‑depth technical experiences."),
+            "tagline": _("Learn. Share. Code."),
+            "links": {
+                "github": "https://github.com/a-jalilian66",
+            }
         }
     }

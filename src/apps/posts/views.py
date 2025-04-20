@@ -13,7 +13,6 @@ class HomePageView(TemplateView):
         start = (page - 1) * per_page
         end = start + per_page
         all_posts = Post.published.all()
-        # all_posts = Post.objects.all()
         context['posts'] = all_posts[start:end]
         context['has_next'] = all_posts.count() > end
         context['has_previous'] = page > 1
@@ -39,7 +38,7 @@ class PostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['hero_title'] = self.object.title
-        context["toc"] = self.object.toc or []
+        context['toc'] = self.object.toc or []
         context['hero_subtitle'] = ""
         return context
 

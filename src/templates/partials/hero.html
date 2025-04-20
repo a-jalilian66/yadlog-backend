@@ -4,7 +4,7 @@
 <section
         class="relative overflow-hidden bg-gradient-to-b from-blue-200 to-white h-[45vh] flex items-center justify-center px-4 text-center">
 
-    <!-- متن وسط -->
+    <!-- Middle text -->
     <div class="z-10">
         <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">
             {{ hero_title|default:"YadLog" }}
@@ -15,8 +15,6 @@
             </p>
         {% endif %}
     </div>
-
-    <!-- ابرها با پراکندگی واقعی‌تر -->
 
     <svg class="absolute top-[-20px] left-[-30px] w-28 opacity-20 z-0" viewBox="0 0 64 64" fill="none">
         <circle cx="20" cy="32" r="12" fill="white"/>
@@ -49,12 +47,7 @@
     </svg>
 
 
-    {#    <img src="{% static 'images/undraw.svg' %}"#}
-    {#         alt="Version Control Illustration"#}
-    {#         class="absolute top-10 right-0 w-64 md:w-80 lg:w-96 opacity-90 z-0 pointer-events-none select-none"/>#}
-
-
-    <!-- موج پایین -->
+    <!-- Downward Wave -->
     <div class="absolute inset-x-0 bottom-0">
         <svg viewBox="0 0 500 150" preserveAspectRatio="none" class="w-full h-16 md:h-20 lg:h-32">
             <path d="M0.00,49.98 C150.00,150.00 350.00,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"

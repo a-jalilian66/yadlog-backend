@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 
 from apps.common.sitemaps import PostSiteMap, StaticSitemap, TagSitemap, CategorySitemap
+from apps.common.views import robots_txt
 
 sitemaps = {
     'posts': PostSiteMap,
@@ -31,7 +32,9 @@ sitemaps = {
 }
 
 # Base URLs
-urlpatterns = []
+urlpatterns = [
+    path('robots.txt', robots_txt),
+]
 
 # If multilingual is enabled
 if settings.MULTILANGUAGE_ENABLED:
@@ -43,6 +46,7 @@ if settings.MULTILANGUAGE_ENABLED:
         path('', include('apps.posts.urls', namespace='posts')),
         path('ckeditor/', include('ckeditor_uploader.urls')),
         path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+        prefix_default_language=settings.PREFIX_DEFAULT_LANGUAGE
     )
 else:
     # without language prefix

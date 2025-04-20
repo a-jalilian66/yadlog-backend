@@ -3,7 +3,7 @@
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
 
-            <!-- دکمه موبایل -->
+            <!-- Mobile button -->
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <button type="button"
                         @click="open = !open"
@@ -13,14 +13,14 @@
 
                     <span class="sr-only">Open main menu</span>
 
-                    <!-- آیکون منوی بسته -->
+                    <!-- Closed menu icon -->
                     <svg x-show="!open" x-cloak class="size-6" fill="none" viewBox="0 0 24 24"
                          stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
                     </svg>
 
-                    <!-- آیکون منوی باز -->
+                    <!-- Open menu icon -->
                     <svg x-show="open" x-cloak class="size-6" fill="none" viewBox="0 0 24 24"
                          stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -29,10 +29,10 @@
                 </button>
             </div>
 
-            <!-- لوگو + منوی دسکتاپ -->
+            <!-- Logo + Desktop Menu -->
             <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div class="flex shrink-0 items-center text-xl">
-                    <a href="{% url 'posts:home' %}">لوگو</a>
+                    <a href="{% url 'posts:home' %}">LOGO</a>
                 </div>
 
                 <div class="hidden sm:mr-6 sm:block">
@@ -48,15 +48,14 @@
         </div>
     </div>
 
-    <!-- منوی موبایل -->
+    <!-- Mobile Menu -->
     <div class="sm:hidden" id="mobile-menu" x-show="open" x-cloak x-transition>
         <div class="space-y-1 px-2 pt-2 pb-3">
-            <a href="#"
-               class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-700 hover:text-white">خانه</a>
-            <a href="#"
-               class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-700 hover:text-white">دسته‌بندی‌ها</a>
-            <a href="#"
-               class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-700 hover:text-white">درباره‌من</a>
+
+            {% for item in menu_items %}
+                <a href="{% url item.url %}"
+                   class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-700 hover:text-white">{{ item.title }}</a>
+            {% endfor %}
         </div>
     </div>
 </nav>

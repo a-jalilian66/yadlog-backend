@@ -2,11 +2,22 @@
 {% load static %}
 {% load i18n %}
 {% load url_filters %}
-{% block title %}Yadlog – صفحه اصلی{% endblock %}
+
+{% block title %}
+    {% trans "Home" context "menu" %}
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="{{ site_info.description|striptags }}">
+    <meta property="og:title" content="{{ site_info.title }}">
+    <meta property="og:description" content="{{ site_info.description|striptags }}">
+    <meta property="og:url" content="{{ request.build_absolute_uri|urlunquote }}">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+{% endblock %}
+
 
 {% block content %}
-
-
 
     <div class="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 px-4">
 

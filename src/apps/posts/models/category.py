@@ -9,7 +9,6 @@ from apps.posts.models.managers import CategoryManager
 class Category(TranslatedSlugMixin, MPTTModel):
     title = models.CharField(_('Title'), max_length=100)
     slug = models.SlugField(
-        _('Slug'),
         blank=True,
         unique=True,
         allow_unicode=True,

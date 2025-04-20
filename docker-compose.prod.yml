@@ -38,8 +38,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-size: "5m"
-        max-file: "2"
+        max-size: "10m"
+        max-file: "5"
 
   db:
     image: postgres:17

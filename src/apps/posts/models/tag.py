@@ -7,7 +7,6 @@ from apps.common.mixins.translated_slug import TranslatedSlugMixin
 class Tag(TranslatedSlugMixin, models.Model):
     title = models.CharField(_('Title'), max_length=50)
     slug = models.SlugField(
-        _('Slug'),
         blank=True,
         unique=True,
         allow_unicode=True,

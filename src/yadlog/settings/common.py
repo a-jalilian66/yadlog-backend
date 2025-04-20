@@ -85,6 +85,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # my context processors
                 'apps.common.context_processors.main_menu',
+                'apps.common.context_processors.site_info'
             ],
         },
     },
@@ -140,6 +141,7 @@ if MULTILANGUAGE_ENABLED:
         ('en', 'English'),
         # You can add other languages here.
     ]
+    PREFIX_DEFAULT_LANGUAGE = os.getenv('PREFIX_DEFAULT_LANGUAGE', 'False') == 'True'
 else:
     LANGUAGES = [
         ('fa', 'فارسی'),
@@ -153,3 +155,5 @@ MODELTRANSLATION_DEFAULT_LANGUAGE = 'fa'
 MODELTRANSLATION_LANGUAGES = ('fa', 'en') if MULTILANGUAGE_ENABLED else ('fa',)
 
 SITE_ID = 1
+
+SITE_DOMAIN = os.getenv('SITE_DOMAIN', 'example.com')

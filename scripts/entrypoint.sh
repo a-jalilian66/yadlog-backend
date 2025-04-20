@@ -3,9 +3,11 @@
 echo "Development Env"
 
 # Fix esbuild and other native modules for current platform
-echo "Cleaning node_modules and reinstalling for current platform..."
+echo "Preparing frontend..."
 cd frontend
 rm -rf node_modules
+npm install
+npm run build
 cd ..
 
 echo "Waiting for postgres to be ready..."
