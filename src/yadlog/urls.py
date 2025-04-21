@@ -31,31 +31,18 @@ sitemaps = {
     'static': StaticSitemap
 }
 
-# Base URLs
 urlpatterns = [
     path('robots.txt', robots_txt),
+    path('i18n/', include('django.conf.urls.i18n')),  # To change language
 ]
 
-# If multilingual is enabled
-if settings.MULTILANGUAGE_ENABLED:
-    urlpatterns += [
-        path('i18n/', include('django.conf.urls.i18n')),  # To change language
-    ]
-    urlpatterns += i18n_patterns(
-        path('admin/', admin.site.urls),
-        path('', include('apps.posts.urls', namespace='posts')),
-        path('ckeditor/', include('ckeditor_uploader.urls')),
-        path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
-        prefix_default_language=settings.PREFIX_DEFAULT_LANGUAGE
-    )
-else:
-    # without language prefix
-    urlpatterns += [
-        path('admin/', admin.site.urls),
-        path('', include('apps.posts.urls', namespace='posts')),
-        path('ckeditor/', include('ckeditor_uploader.urls')),
-        path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
-    ]
+urlpatterns += i18n_patterns(
+    path('admin/', admin.site.urls),
+    path('', include('apps.posts.urls', namespace='posts')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    prefix_default_language=settings.PREFIX_DEFAULT_LANGUAGE
+)
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

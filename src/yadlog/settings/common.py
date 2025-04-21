@@ -115,10 +115,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
 
-TIME_ZONE = 'UTC'
-
-USE_TZ = True
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
@@ -129,30 +125,30 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MULTILANGUAGE_ENABLED = os.getenv('MULTILANGUAGE_ENABLED', 'False') == 'True'
-
-LANGUAGE_CODE = 'fa'
-USE_I18N = True
-USE_L10N = True
-
-if MULTILANGUAGE_ENABLED:
-    LANGUAGES = [
-        ('fa', 'فارسی'),
-        ('en', 'English'),
-        # You can add other languages here.
-    ]
-    PREFIX_DEFAULT_LANGUAGE = os.getenv('PREFIX_DEFAULT_LANGUAGE', 'False') == 'True'
-else:
-    LANGUAGES = [
-        ('fa', 'فارسی'),
-    ]
-
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'yadlog', 'locale')
 ]
 
+USE_I18N = True
+USE_L10N = True
+TIME_ZONE = 'UTC'
+USE_TZ = True
+
+# Available languages in the project
+LANGUAGES = [
+    ('fa', 'فارسی'),
+    ('en', 'English'),
+]
+
+# Default language code for Django
+LANGUAGE_CODE = 'fa'
+
+# Determines whether the default language should also use a URL prefix
+PREFIX_DEFAULT_LANGUAGE = True
+
+# Configuration for django-modeltranslation
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'fa'
-MODELTRANSLATION_LANGUAGES = ('fa', 'en') if MULTILANGUAGE_ENABLED else ('fa',)
+MODELTRANSLATION_LANGUAGES = ('en', 'fa')
 
 SITE_ID = 1
 

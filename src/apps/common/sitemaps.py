@@ -8,7 +8,7 @@ from apps.posts.models import Post, Tag, Category
 class PostSiteMap(Sitemap):
     changefreq = "weekly"
     priority = 0.9
-    i18n = getattr(settings, 'MULTILANGUAGE_ENABLED', False)
+    i18n = True
     x_default = True
     protocol = 'https'
 
@@ -35,7 +35,7 @@ class PostSiteMap(Sitemap):
 class StaticSitemap(Sitemap):
     changefreq = "yearly"
     priority = 0.5
-    i18n = getattr(settings, 'MULTILANGUAGE_ENABLED', False)
+    i18n = True
     x_default = True
     protocol = 'https'
 
@@ -55,7 +55,7 @@ class StaticSitemap(Sitemap):
 class CategorySitemap(Sitemap):
     changefreq = "monthly"
     priority = 0.7
-    i18n = getattr(settings, 'MULTILANGUAGE_ENABLED', False)
+    i18n = True
     x_default = True
     protocol = 'https'
 
@@ -86,7 +86,7 @@ class CategorySitemap(Sitemap):
 class TagSitemap(Sitemap):
     changefreq = "monthly"
     priority = 0.6
-    i18n = getattr(settings, 'MULTILANGUAGE_ENABLED', False)
+    i18n = True
     x_default = True
     protocol = 'https'
 
